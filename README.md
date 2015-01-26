@@ -1,3 +1,41 @@
+# Beaker
+
+docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix  -v $HOME/research/julia/:/home/jovyan/research/julia juliafinmetrix/jupyter bash
+
+In order to build beaker image:
+````
+docker build -t juliafinmetrix/beaker .
+````
+Or, without cached layers:
+````
+docker build -t juliafinmetrix/beaker -no-cache .
+````
+
+Then, run it from terminal
+````
+docker run -it -v ~/research/julia/:~/research/julia juliafinmetrix/beaker bash
+```
+
+Run in browser:
+````
+docker run -p 8800:8800 -v ~/research/julia/:~/research/julia juliafinmetrix/beaker bash
+```
+
+Or, in order to mount current directory:
+````
+docker run -p 8800:8800 -v $HOME/research/julia/:/home/beaker/research/julia -v $PWD:/home/beaker/mount/ juliafinmetrix/beaker
+```
+
+docker run -p 8888:8888 -v $HOME/research/julia/:/home/jovyan/research/julia -v $PWD:/home/jovyan/mount/ juliafinmetrix/jupyter
+
+docker run -it -v $HOME/research/julia/:/home/jovyan/research/julia -v $PWD:/home/jovyan/mount/ juliafinmetrix/jupyter bash
+# Jupyter
+
+
+
+# JuliaBox
+
+
 Goal
 ====
 
