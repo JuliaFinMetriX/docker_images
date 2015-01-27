@@ -31,6 +31,11 @@ docker run -p 8888:8888 -v $HOME/research/julia/:/home/jovyan/research/julia -v 
 docker run -it -v $HOME/research/julia/:/home/jovyan/research/julia -v $PWD:/home/jovyan/mount/ juliafinmetrix/jupyter bash
 # Jupyter
 
+Running docker container with Julia inside of emacs:
+````
+docker run -it juliafinmetrix/jupyter bash
+TERM=dumb julia --color=no
+````
 
 
 # JuliaBox

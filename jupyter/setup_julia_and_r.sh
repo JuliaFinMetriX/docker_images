@@ -19,12 +19,13 @@ julia --eval 'Pkg.clone("https://github.com/plotly/Plotly.jl")'
 mkdir ~/research/
 mkdir ~/research/julia
 
-ln -s ~/research/julia/TimeData/ ~/.julia/v0.3/
-ln -s ~/research/julia/EconDatasets/ ~/.julia/v0.3/
 ln -s ~/research/julia/Copulas/ ~/.julia/v0.3/
+ln -s ~/research/julia/EconDatasets/ ~/.julia/v0.3/
 ln -s ~/research/julia/Econometrics/ ~/.julia/v0.3/
+ln -s ~/research/julia/TimeData/ ~/.julia/v0.3/
 ln -s ~/research/julia/WorldBankDataTd/ ~/.julia/v0.3/
 ln -s ~/research/julia/AssetMgmt/ ~/.julia/v0.3/
+ln -s ~/research/julia/Vines/ ~/.julia/v0.3/
 
 ## install additional R packages
 Rscript -e "install.packages('Rcpp',,'http://cran.us.r-project.org')"
