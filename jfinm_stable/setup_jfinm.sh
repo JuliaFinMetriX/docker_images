@@ -32,6 +32,7 @@ cd $HOME
 
 ## get notebooks
 git clone https://github.com/JuliaFinMetriX/jfinmetrix_apps.git jfinm_apps
+git clone https://github.com/cgroll/ijuliaNb.git ijuliaNb
 
 ## create mount directory
 mkdir ~/mount
