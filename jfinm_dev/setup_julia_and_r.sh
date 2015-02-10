@@ -24,6 +24,8 @@ julia --eval 'Pkg.add("NLopt")'
 julia --eval 'Pkg.add("JuMP")'
 julia --eval 'Pkg.add("Gadfly")'
 julia --eval 'Pkg.add("Winston")'
+julia --eval 'Pkg.add("Docile")'
+julia --eval 'Pkg.add("Lexicon")'
 julia --eval 'Pkg.clone("https://github.com/plotly/Plotly.jl")'
 julia --eval 'Pkg.clone("https://github.com/one-more-minute/Requires.jl.git")'
 
