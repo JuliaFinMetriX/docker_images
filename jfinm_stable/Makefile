@@ -12,7 +12,7 @@ build: Dockerfile setup_jfinm.sh
 	docker build -t $(DOCK_NAME) .
 
 rebuild:
-	docker build -t --no-cache $(DOCK_NAME) .
+	docker build --no-cache -t $(DOCK_NAME) .
 
 tests: test_nb1 test_packages
 	echo "ALL TESTS PASSED"
