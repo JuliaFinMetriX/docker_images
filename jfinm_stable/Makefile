@@ -1,5 +1,5 @@
 DOCK_NAME := juliafinmetrix/jfinm_stable
-J_CMD := 'Pkg.test("TimeData", "WorldBankDataTd", "Copulas")'
+J_CMD := 'Pkg.test("TimeData", "WorldBankDataTd")'
 DOCK_HOME := /home/jovyan
 DOCK_MOUNT := $(DOCK_HOME)/mount
 
@@ -18,7 +18,7 @@ tests: test_nb1 test_packages
 	echo "ALL TESTS PASSED"
 
 test_nb1:
-	docker run --rm -v $(NBS_PATH1):$(DOCK_MOUNT) -w $(DOCK_MOUNT) $(DOCK_NAME) make;
+	cd $(NBS_PATH1) && make test_stable && cd -
 
 test_packages:
 	docker run --rm --entrypoint="julia" $(DOCK_NAME) -e $(J_CMD);

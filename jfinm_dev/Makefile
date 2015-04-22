@@ -6,10 +6,20 @@ DOCK_MOUNT := $(DOCK_HOME)/mount
 # path to tested notebook files
 NBS_PATH1 := $(HOME)/research/ijuliaNb
 
-all: build
+all: build tests	
 
 build: Dockerfile setup_julia_and_r.sh
 	docker build -t $(DOCK_NAME) .
 
 rebuild:
-	docker build -t --no-cache $(DOCK_NAME) .
+	docker build --no-cache -t $(DOCK_NAME) .
+
+tests: test_nb1 test_packages
+	echo "ALL TESTS PASSED"
+
+test_nb1:
+	cd $(NBS_PATH1) && make test_stable && cd -
+
+test_packages:
+	docker run --rm --entrypoint="julia" $(DOCK_NAME) -e $(J_CMD);
+

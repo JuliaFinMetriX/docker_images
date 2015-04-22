@@ -3,10 +3,11 @@ FROM jupyter/demo
 MAINTAINER Christian Groll
 
 USER root
-RUN apt-get install -y libnlopt-dev 
+RUN apt-get install -y libnlopt0
 RUN apt-get install -y libboost-all-dev
 RUN apt-get install -y libgomp1
 RUN apt-get install -y wget
+
 USER jovyan
 
 Add ./setup_jfinm.sh /tmp/
