@@ -22,6 +22,7 @@ julia --eval 'Pkg.add("TimeData")'
 julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/WorldBankDataTd.jl.git")'
 julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/Econometrics.jl.git")'
 julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/Copulas.jl.git")'
+julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/JFinM_Charts.git")'
 
 cd $HOME/.julia/v0.3/Copulas
 
@@ -31,7 +32,6 @@ make
 cd $HOME
 
 ## get notebooks
-git clone https://github.com/JuliaFinMetriX/jfinmetrix_apps.git jfinm_apps
 git clone https://github.com/cgroll/ijuliaNb.git ijuliaNb
 
 ## create mount directory

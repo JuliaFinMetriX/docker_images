@@ -39,7 +39,7 @@ ln -s ~/research/julia/Econometrics/ ~/.julia/v0.3/
 ln -s ~/research/julia/TimeData/ ~/.julia/v0.3/
 ln -s ~/research/julia/WorldBankDataTd/ ~/.julia/v0.3/
 ln -s ~/research/julia/AssetMgmt/ ~/.julia/v0.3/
-ln -s ~/research/julia/Vines/ ~/.julia/v0.3/
+ln -s ~/research/julia/JFinM_Charts/ ~/.julia/v0.3/
 
 ## create mount directory
 mkdir ~/mount
