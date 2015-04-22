@@ -1,13 +1,3 @@
-## install additional R packages
-Rscript -e "install.packages('Rcpp',,'http://cran.us.r-project.org')"
-Rscript -e "install.packages('dplyr',,'http://cran.us.r-project.org')"
-Rscript -e "install.packages('reshape2',,'http://cran.us.r-project.org')"
-Rscript -e "install.packages('ggplot2',,'http://cran.us.r-project.org')"
-Rscript -e "install.packages('CDVine',,'http://cran.us.r-project.org')"
-Rscript -e "install.packages('fGarch',,'http://cran.us.r-project.org')"
-Rscript -e "install.packages('zoo',,'http://cran.us.r-project.org')"
-Rscript -e "install.packages('tseries',,'http://cran.us.r-project.org')"
-
 ## install Julia packages
 julia --eval 'Pkg.update()'
 julia --eval 'Pkg.add("Dates")'
