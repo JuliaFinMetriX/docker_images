@@ -1,5 +1,6 @@
 DOCK_NAME := juliafinmetrix/jfinm_dev
-J_CMD := 'Pkg.test("TimeData", "WorldBankDataTd", "Copulas")'
+J_CMD := 'Pkg.test("TimeData", "WorldBankDataTd")'
+JULIA_PATH := $(HOME)/research/julia
 DOCK_HOME := /home/jovyan
 DOCK_MOUNT := $(DOCK_HOME)/mount
 
@@ -21,5 +22,5 @@ test_nb1:
 	cd $(NBS_PATH1) && make test_stable && cd -
 
 test_packages:
-	docker run --rm --entrypoint="julia" $(DOCK_NAME) -e $(J_CMD);
+	docker run --rm -v $(JULIA_PATH):/home/jovyan/research/julia --entrypoint="julia" $(DOCK_NAME) -e $(J_CMD);
 
