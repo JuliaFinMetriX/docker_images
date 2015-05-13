@@ -9,7 +9,7 @@ NBS_PATH1 := $(HOME)/research/ijuliaNb
 
 all: build tests	
 
-build: Dockerfile setup_julia_and_r.sh
+build: Dockerfile setup_julia.sh setup_r.sh
 	docker build -t $(DOCK_NAME) .
 
 rebuild:
@@ -19,7 +19,7 @@ tests: test_nb1 test_packages
 	echo "ALL TESTS PASSED"
 
 test_nb1:
-	cd $(NBS_PATH1) && make test_stable && cd -
+	cd $(NBS_PATH1) && make test_dev && cd -
 
 test_packages:
 	docker run --rm -v $(JULIA_PATH):/home/jovyan/research/julia --entrypoint="julia" $(DOCK_NAME) -e $(J_CMD);
