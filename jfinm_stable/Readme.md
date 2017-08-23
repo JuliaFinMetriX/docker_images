@@ -25,7 +25,7 @@ directory:
 ````
 docker run -p 8888:8888 -v $PWD:/home/jovyan/mount/ \\
   juliafinmetrix/jfinm_stable 
-```
+````
 
 ## Test requirements
 
