@@ -1,35 +1,34 @@
-## install Julia packages
+## juliafinmetrix, development version
+# - own julia packages are not downloaded in order to be able to edit them
+# - own julia packages are automatically mounted
+
 julia --eval 'Pkg.update()'
-julia --eval 'Pkg.add("Dates")'
-julia --eval 'Pkg.add("DataArrays")'
+
+# data packages
 julia --eval 'Pkg.add("DataFrames")'
 julia --eval 'Pkg.add("TimeSeries")'
-julia --eval 'Pkg.add("MAT")'
-julia --eval 'Pkg.add("Quandl")'
-julia --eval 'Pkg.add("Taro")'
-julia --eval 'Pkg.add("GLM")'
-julia --eval 'Pkg.add("Distributions")'
-julia --eval 'Pkg.add("Debug")'
-julia --eval 'Pkg.add("NLopt")'
-julia --eval 'Pkg.add("JuMP")'
-julia --eval 'Pkg.add("Gadfly")'
-julia --eval 'Pkg.add("Winston")'
-julia --eval 'Pkg.add("Docile")'
-julia --eval 'Pkg.add("Lexicon")'
-julia --eval 'Pkg.clone("https://github.com/plotly/Plotly.jl")'
-julia --eval 'Pkg.clone("https://github.com/one-more-minute/Requires.jl.git")'
+julia --eval 'Pkg.add("DistributedArrays")'
+julia --eval 'Pkg.add("IterableTables")'
+julia --eval 'Pkg.add("RDatasets")'
+julia --eval 'Pkg.add("NamedArrays")'
 
-## set up links to packages that need to be edited
-mkdir ~/research/
-mkdir ~/research/julia
+# plotting packages
+julia --eval 'Pkg.add("Plots")'
+julia --eval 'Pkg.add("StatPlots")'
+julia --eval 'Pkg.add("GR")'
+julia --eval 'Pkg.add("PlotlyJS")'
 
-ln -s ~/research/julia/Copulas/ ~/.julia/v0.3/
-ln -s ~/research/julia/EconDatasets/ ~/.julia/v0.3/
-ln -s ~/research/julia/Econometrics/ ~/.julia/v0.3/
-ln -s ~/research/julia/TimeData/ ~/.julia/v0.3/
-ln -s ~/research/julia/WorldBankDataTd/ ~/.julia/v0.3/
-ln -s ~/research/julia/AssetMgmt/ ~/.julia/v0.3/
-ln -s ~/research/julia/JFinM_Charts/ ~/.julia/v0.3/
+# convex optimization packages
+julia --eval 'Pkg.add("Convex")'
+julia --eval 'Pkg.add("SCS")'
+
+## set up links to packages that are automatically mounted
+mkdir ~/scalable/
+mkdir ~/scalable/julia
+
+# create symbolic links to packages that will be automatically mounted
+ln -s ~/scalable/julia/EconDatasets/ /juliapro/bin/JuliaPro-0.6.2.1/JuliaPro/pkgs-0.6.2.1/v0.6/
+ln -s ~/scalable/julia/DynAssMgmt/ /juliapro/bin/JuliaPro-0.6.2.1/JuliaPro/pkgs-0.6.2.1/v0.6/
 
 ## create mount directory
 mkdir ~/mount

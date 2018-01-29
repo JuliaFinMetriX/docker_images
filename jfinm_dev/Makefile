@@ -9,7 +9,7 @@ NBS_PATH1 := $(HOME)/research/ijuliaNb
 
 all: build tests	
 
-build: Dockerfile setup_julia.sh setup_r.sh
+build: Dockerfile setup_julia.sh
 	docker build -t $(DOCK_NAME) .
 
 rebuild:

@@ -1,38 +1,35 @@
+## juliafinmetrix, stable version
+# - automatically download julia packages
+# - automatically download jupyter apps
+# - any changes to packages and apps will be lost when session is over
+
 julia --eval 'Pkg.update()'
-julia --eval 'Pkg.add("Dates")'
-julia --eval 'Pkg.add("DataArrays")'
+
+# data packages
 julia --eval 'Pkg.add("DataFrames")'
 julia --eval 'Pkg.add("TimeSeries")'
-julia --eval 'Pkg.add("MAT")'
-julia --eval 'Pkg.add("Quandl")'
-julia --eval 'Pkg.add("Taro")'
-julia --eval 'Pkg.add("GLM")'
-julia --eval 'Pkg.add("Distributions")'
-julia --eval 'Pkg.add("Debug")'
-julia --eval 'Pkg.add("NLopt")'
-julia --eval 'Pkg.add("JuMP")'
-julia --eval 'Pkg.add("Gadfly")'
-julia --eval 'Pkg.add("Winston")'
-julia --eval 'Pkg.clone("https://github.com/plotly/Plotly.jl")'
+julia --eval 'Pkg.add("DistributedArrays")'
+julia --eval 'Pkg.add("IterableTables")'
+julia --eval 'Pkg.add("RDatasets")'
+julia --eval 'Pkg.add("NamedArrays")'
 
+# plotting packages
+julia --eval 'Pkg.add("Plots")'
+julia --eval 'Pkg.add("StatPlots")'
+julia --eval 'Pkg.add("GR")'
+julia --eval 'Pkg.add("PlotlyJS")'
 
-julia --eval 'Pkg.add("EconDatasets")'
-julia --eval 'Pkg.add("TimeData")'
+# convex optimization packages
+julia --eval 'Pkg.add("Convex")'
+julia --eval 'Pkg.add("SCS")'
 
-julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/WorldBankDataTd.jl.git")'
-julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/Econometrics.jl.git")'
-julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/Copulas.jl.git")'
-julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/JFinM_Charts.git")'
-
-cd $HOME/.julia/v0.3/Copulas
-
-## install cpp library
-make
+julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/DynAssMgmt.jl.git")'
+julia --eval 'Pkg.clone("https://github.com/JuliaFinMetriX/EconDatasets.jl.git")'
 
 cd $HOME
 
 ## get notebooks
-git clone https://github.com/cgroll/ijuliaNb.git ijuliaNb
+git clone https://github.com/JuliaFinMetriX/JupyterApps.git
 
 ## create mount directory
 mkdir ~/mount
